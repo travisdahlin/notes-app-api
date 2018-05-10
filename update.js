@@ -6,7 +6,7 @@ export async function main(event, context, callback) {
 	const params = {
 		TableName: 'notes',
 		Key: {
-			userId: event.requestContext.identity.congnitoIdentityId,
+			userId: event.requestContext.identity.cognitoIdentityId,
 			noteId: event.pathParameters.id
 		},
 		UpdateExpression: "SET #content = :content, #attachment = :attachment",
@@ -18,7 +18,7 @@ export async function main(event, context, callback) {
       ":content": data.content ? data.content : null,
       ":attachment": data.attachment ? data.attachment : null
 		},
-    RETURN_VALUES: "ALL_NEW"
+		ReturnValues: "ALL_NEW"
 	}
 
   try {
