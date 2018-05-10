@@ -8,7 +8,7 @@ export function failure(body) {
 
 function buildResponse(statusCode, body) {
 	return {
-		statuscode: statuscode,
+		statuscode: statusCode,
 		headers: {
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Credentials": true
